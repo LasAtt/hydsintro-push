@@ -3,7 +3,7 @@ import ScrollArea from 'react-scrollbar'
 import * as firebase from 'firebase';
 import MessageList from './MessageList.jsx'
 
-class Chat extends React.Component {
+class MessageContainer extends React.Component {
 
   state = {
     messages: [],
@@ -32,4 +32,4 @@ class Chat extends React.Component {
   }
 }
 
-export default Chat
+export default MessageContainer
