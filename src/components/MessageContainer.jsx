@@ -1,6 +1,6 @@
 import React from 'react'
 import ScrollArea from 'react-scrollbar'
-import * as firebase from 'firebase';
+import { messaging } from '../util/firebase';
 import MessageList from './MessageList.jsx'
 
 class MessageContainer extends React.Component {
@@ -10,9 +10,8 @@ class MessageContainer extends React.Component {
   };
 
   componentDidMount() {
-    console.log(firebase);
-    firebase.messaging.onMessage((message) => {
-      this.setState({ messages: this.state.messages.concat([message]) });
+    messaging.onMessage((message) => {
+      this.setState({ messages: this.state.messages.concat([message]) })
     })
   }
 
